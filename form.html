@@ -6,62 +6,43 @@
     <title>Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <style>
-      /* Add your custom CSS for the success message here */
-      .success-message {
-        text-align: center;
-        font-size: 24px;
-        color: green;
-        margin-top: 20px;
-        background-color: #f0f0f0;
-        border: 2px solid #00cc00;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-  </style>
-
 </head>
 <body>
     
   <div class="wrapper" style="background-image: url('./src/images/leone-venter-VieM9BdZKFo-unsplash.jpg');">
     <div class="inner">
-      <form id="submit-form" action="">
+      <form action="">
         <h3>Registration Form</h3>
           <div class="form-group">
             <div class="form-wrapper">
               <label for="">First Name</label>
-                <input type="text" name="firstName" class="form-control">
+                <input type="text" class="form-control">
             </div>
             <div class="form-wrapper">
             <label for="">Last Name</label>
-              <input type="text" name="lastName" class="form-control">
+              <input type="text" class="form-control">
             </div>
           </div>
           <div class="form-wrapper">
             <label for="">Email</label>
-              <input type="email" name="email" class="form-control">
+              <input type="email" class="form-control">
           </div>
           <div class="form-wrapper">
             <label for="">Phone Number</label>
-              <input type="text" name="number" class="form-control">
+              <input type="text" class="form-control">
           </div>
           <div class="form-wrapper">
             <label for="">Course</label>
-              <input type="checkbox" name="course"> MERN Stack
+              <input type="checkbox"> MERN Stack
                 <!-- <span class="checkmark"></span> -->
             <!-- </label> -->
           </div>
           <div class="form-wrapper">
             <label for="">Comments</label>
-              <input type="text" name="message" class="form-control">
+              <input type="text" class="form-control">
           </div>
           <button>Register Now</button>
       </form>
-      <div class="success-message" style="display: none;">Form submitted successfully!</div>
-    </div>
     </div>
   </div>
 
@@ -69,31 +50,5 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
-  <!-- Ajax Success Message and Redirection -->
-<script>
-  $("#submit-form").submit((e) => {
-      e.preventDefault();
-      $.ajax({
-          url: "https://script.google.com/macros/s/AKfycbzoua30YGdwlYyTNAHRVSVPHdrT0bfyBGORG_OW-B6S9IArGN77Okw0k-WjdXhZUSAcHw/exec",
-          data: $("#submit-form").serialize(),
-          method: "post",
-          success: function (response) {
-              // Hide the form
-              $("#submit-form").hide();
-              // Display the success message
-              $(".success-message").show();
-              // Redirect to another page after a delay (e.g., 3 seconds)
-              setTimeout(function () {
-                  window.location.href = "http://127.0.0.1:5500/index.html"; // Change the URL to your desired page
-              }, 3000); // 3000 milliseconds (3 seconds)
-          },
-          error: function (err) {
-              alert("Something went wrong.");
-          }
-      });
-  });
-</script>
-
 </body>
 </html>
