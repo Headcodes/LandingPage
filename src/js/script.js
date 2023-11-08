@@ -5,11 +5,14 @@ var email = document.getElementById("email");
 var phoneNo= document.getElementById("phoneNo");
 var checkbox= document.getElementById("mernStack");
 
-let register = document.getElementsByTagName("button");
 
-register[0].addEventListener("click",(e)=>{
+
+
+
+    
+ $("#submit-form").submit((e) => {
     e.preventDefault();
-
+           
     var errorMessage = "";
     let errMsg = "";
     let errMsg1 = "";
@@ -35,7 +38,7 @@ register[0].addEventListener("click",(e)=>{
         errMsg1 += "Invalid Phone number. ";
     }
     else{
-        errMsg1 += " ";
+        errMsg1 += "";
     }
 
     if(checkbox.checked){
@@ -43,8 +46,6 @@ register[0].addEventListener("click",(e)=>{
     }
     if(!ischecked){
         errMsg2 += "Please select this option";
-    }else{
-        errMsg2 += " ";
     }
 
  
@@ -56,11 +57,29 @@ register[0].addEventListener("click",(e)=>{
         document.getElementById("errorMsg1").textContent = errMsg1;
         document.getElementById("errorMsg2").textContent = errMsg2;
         return false; // Prevent form submission
-    }
-   
-
-    return true; 
-
+    } 
+    else{
+       
+    console.log("submitted");
+              $.ajax({
+                  url: "https://script.google.com/macros/s/AKfycbzv51-I32-8bWnwsvUiQ_r4iiZ_YKuJQN-Ij7pXNuM5lqT4NEoSfg-LrxnnNjd9LaDbyA/exec",
+                  data: $("#submit-form").serialize(),
+                  method: "post",
+                  success: function (response) {
+                      // Hide the form
+                    
+                      setTimeout(function () {
+                        window.location.href = "thankyou.html";// Change the URL to your desired page
+                      }, 2000); // 2000 milliseconds (2 seconds)
+                  },
+                  error: function (err) {
+                      alert("Something went wrong.");
+                  }
+              });
+         
+             
+            }
+           
 })
 
 
