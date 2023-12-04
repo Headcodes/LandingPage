@@ -93,12 +93,20 @@ form {
 }
 
 .form-group .form-wrapper:first-child {
-    margin-right: 20px
+    margin-right: 20px;
 }
 
 .form-wrapper {
-    margin-bottom: 17px
+    margin-bottom: 17px;
     
+}
+.form-wrapper1{
+   display: block;
+   
+}
+.course{
+    display: block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .form-wrapper label {
@@ -192,7 +200,8 @@ button:hover:before {
 }
 
 .checkbox {
-    position: relative
+    position: relative;
+   
 }
 
 .checkbox label {
@@ -207,7 +216,7 @@ button:hover:before {
 }
 
 .checkbox input:checked~.checkmark:after {
-    display: block
+    display: block;
 }
 
 .checkmark {

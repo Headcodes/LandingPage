@@ -3,7 +3,8 @@ var firstName = document.getElementById("fname");
 var lastName = document.getElementById("lname");
 var email = document.getElementById("email");
 var phoneNo= document.getElementById("phoneNo");
-var checkbox= document.getElementById("mernStack");
+var Frontend= document.getElementById("Frontend");
+var Backend= document.getElementById("Backend");
 
 
 
@@ -41,11 +42,11 @@ var checkbox= document.getElementById("mernStack");
         errMsg1 += "";
     }
 
-    if(checkbox.checked){
+    if(Frontend.checked || Backend.checked){
         ischecked=true;
     }
     if(!ischecked){
-        errMsg2 += "Please select this option";
+        errMsg2 += "Select atleast one course.";
     }
 
  
