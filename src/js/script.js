@@ -22,8 +22,17 @@ var Backend= document.getElementById("Backend");
     // Check if the name field is empty
     if (firstName.value === "" || firstName.value === null) {
         errorMessage += "First Name is required. ";
-    }else if (lastName.value === "" || lastName.value === null) {
+    }
+    else if(!validateName(firstName.value)){
+        errorMessage += "Not a Valid FirstName. ";
+        console.log(validateName(firstName.value));
+    }
+     if (lastName.value === "" || lastName.value === null) {
         errorMessage += "Last Name is required. ";
+    }
+   
+    else if(!validateName(lastName.value)){
+        errorMessage += "Not a Valid LastName. ";
     }
 
     // Check if the email field is empty and is a valid email format
@@ -105,3 +114,9 @@ function validatePhoneNumber(phoneNumber) {
         return false; // Invalid phone number
     }
 }
+function validateName(name) {
+    const regex = /^[a-zA-Z\s'-]+$/;
+    return regex.test(name);
+  }
+  
+  
