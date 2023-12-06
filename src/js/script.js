@@ -106,7 +106,7 @@ function validatePhoneNumber(phoneNumber) {
     const numericPhoneNumber = phoneNumber.replace(/\D/g, '');
 
     // Regular expression for a common international phone number format
-    const phoneNumberPattern = /^[0-9]{6,15}$/;
+    const phoneNumberPattern = /^[789]\d{9}$/;
 
     if (phoneNumberPattern.test(numericPhoneNumber)) {
         return true; // Valid phone number
@@ -114,6 +114,7 @@ function validatePhoneNumber(phoneNumber) {
         return false; // Invalid phone number
     }
 }
+
 function validateName(name) {
     const regex = /^[a-zA-Z\s'-]+$/;
     return regex.test(name);
