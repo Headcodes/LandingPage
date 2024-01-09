@@ -3,8 +3,10 @@ var firstName = document.getElementById("fname");
 var lastName = document.getElementById("lname");
 var email = document.getElementById("email");
 var phoneNo= document.getElementById("phoneNo");
-var Frontend= document.getElementById("Frontend");
-var Backend= document.getElementById("Backend");
+// var Frontend= document.getElementById("Frontend");
+// var Backend= document.getElementById("Backend");
+
+var JavaScript = document.getElementById("JavaScript");
 
 
 
@@ -51,11 +53,15 @@ var Backend= document.getElementById("Backend");
         errMsg1 += "";
     }
 
-    if(Frontend.checked || Backend.checked){
+    // if(Frontend.checked || Backend.checked){
+    //     ischecked=true;
+    // }
+
+    if(JavaScript.checked){
         ischecked=true;
     }
     if(!ischecked){
-        errMsg2 += "Select atleast one course.";
+        errMsg2 += "Please Select this";
     }
 
  
