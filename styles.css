@@ -23,7 +23,7 @@
   position: absolute;
   left: 0;
 } */
-.centerItem{
+.centerItem {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -182,7 +182,6 @@ ul li .descr::before {
   bottom: 0.25rem;
 }
 
-
 .spinner {
   display: inline-block;
   width: 120px;
@@ -190,7 +189,7 @@ ul li .descr::before {
   background-color: transparent;
 
   border-radius: 50%;
-/* Adjust the duration and timing function as needed */
+  /* Adjust the duration and timing function as needed */
 }
 
 @keyframes textAnimation {
@@ -254,9 +253,15 @@ ul li .descr::before {
     border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
   }
 }
-
+@media (max-width: 640px) {
+  .centerItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 @media (max-width: 430px) {
-  .centerItem{
+  .centerItem {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -301,4 +306,3 @@ ul li .descr::before {
     justify-content: center;
   }
 }
-
