@@ -36,7 +36,7 @@
   justify-content: center;
 }
 
-ul {
+.ulstyle {
   --col-gap: 2rem;
   --row-gap: 2rem;
   --line-w: 0.25rem;
@@ -50,7 +50,7 @@ ul {
 }
 
 /* line */
-ul::before {
+.ulstyle::before {
   content: "";
   grid-column: 1;
   grid-row: 1 / span 20;
@@ -61,12 +61,12 @@ ul::before {
 /* columns*/
 
 /* row gaps */
-ul li:not(:last-child) {
+.ulstyle .listyle:not(:last-child) {
   margin-bottom: var(--row-gap);
 }
 
 /* card */
-ul li {
+.ulstyle .listyle {
   grid-column: 2;
   --inlineP: 1.5rem;
   margin-inline: var(--inlineP);
@@ -76,7 +76,7 @@ ul li {
 }
 
 /* date */
-ul li .date {
+.ulstyle .listyle .date {
   --dateH: 3rem;
   height: var(--dateH);
   margin-inline: calc(var(--inlineP) * -1);
@@ -96,7 +96,7 @@ ul li .date {
 }
 
 /* date flap */
-ul li .date::before {
+.ulstyle .listyle .date::before {
   content: "";
   width: var(--inlineP);
   aspect-ratio: 1;
@@ -110,7 +110,7 @@ ul li .date::before {
 }
 
 /* circle */
-ul li .date::after {
+.ulstyle .listyle .date::after {
   content: "";
   position: absolute;
   width: 2rem;
@@ -143,26 +143,26 @@ ul li .date::after {
   text-align: right;
   padding-right: 1.5rem;
 }
-ul li .title,
-ul li .descr {
+ .listyle .title,
+.listyle .descr {
   background: var(--bgColor);
   position: relative;
   padding-inline: 1.5rem;
 }
-ul li .title {
+.listyle .title {
   overflow: hidden;
   padding-block-start: 1.5rem;
   padding-block-end: 1rem;
   font-weight: 500;
 }
-ul li .descr {
+.listyle .descr {
   padding-block-end: 1.5rem;
   font-weight: 300;
 }
 
 /* shadows */
-ul li .title::before,
-ul li .descr::before {
+.listyle .title::before,
+.listyle .descr::before {
   content: "";
   position: absolute;
   width: 90%;
@@ -173,11 +173,11 @@ ul li .descr::before {
   filter: blur(4px);
   transform: translate(-50%, 50%);
 }
-ul li .title::before {
+.listyle .title::before {
   bottom: calc(100% + 0.125rem);
 }
 
-ul li .descr::before {
+.listyle .descr::before {
   z-index: -1;
   bottom: 0.25rem;
 }
@@ -222,34 +222,34 @@ ul li .descr::before {
 }
 
 @media (min-width: 40rem) {
-  ul {
+.ulstyle {
     grid-template-columns: 1fr var(--line-w) 1fr;
   }
-  ul::before {
+  .ulstyle::before {
     grid-column: 2;
   }
-  ul li:nth-child(odd) {
+  .listyle:nth-child(odd) {
     grid-column: 1;
   }
-  ul li:nth-child(even) {
+  .listyle:nth-child(even) {
     grid-column: 3;
   }
 
   /* start second card */
-  ul li:nth-child(2) {
+  .listyle:nth-child(2) {
     grid-row: 2/4;
   }
 
-  ul li:nth-child(odd) .date::before {
+  .listyle:nth-child(odd) .date::before {
     clip-path: polygon(0 0, 100% 0, 100% 100%);
     left: 0;
   }
 
-  ul li:nth-child(odd) .date::after {
+  .listyle:nth-child(odd) .date::after {
     transform: translate(-50%, -50%);
     left: calc(100% + var(--col-gap) + var(--line-w) / 2);
   }
-  ul li:nth-child(odd) .date {
+  .listyle:nth-child(odd) .date {
     border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
   }
 }
@@ -266,20 +266,20 @@ ul li .descr::before {
     align-items: center;
     justify-content: center;
   }
-  ul {
+  .ulstyle {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-left: 25px;
   }
-  ul .li {
+  .ulstyle .li {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  li {
+  .listyle {
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -299,7 +299,7 @@ ul li .descr::before {
   .date::after {
     display: none;
   }
-  li .descr,
+  .listyle .descr,
   .title {
     display: flex;
     align-items: center;
